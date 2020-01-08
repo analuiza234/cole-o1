@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro de usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item lines="none">
+    <img src="assets/perfil.png" (click)="tirarFoto()" *ngIf="!preview">
+    <img [src]="preview" (click)="tirarFoto()" *ngIf="preview">
+  </ion-item>
+
+  <form #fc="ngForm" (ngSubmit)="onsubmit(fc)">
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.nome" name="nome" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input type="email" [(ngModel)]="usuario.email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" #e="ngModel"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="e.invalid && e.dirty">E-mail invalido!</ion-text>
+
+    <ion-item>
+      <ion-label>Opções</ion-label>
+      <ion-select placeholder="Select One" [(ngModel)]="usuario.opcoes" name="opcoes" required>
+        <ion-select-option value="m">Moeda</ion-select-option>
+        <ion-select-option value="c">Carro</ion-select-option>
+        <ion-select-option value="a">Anel</ion-select-option>
+        <ion-select-option value="r">Roupa</ion-select-option>
+        <ion-select-option value="r">Relógio</ion-select-option>
+        <ion-select-option value="p">Pedra</ion-select-option>
+        <ion-select-option value="t">Tampinhas</ion-select-option>
+        <ion-select-option value="l">Livros</ion-select-option>
+        <ion-select-option value="s">Sapatos</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Quant</ion-label>
+      <ion-input type="quant" [(ngModel)]="usuario.quant" name="quant" required  ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">valor</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.valor" name="valor" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="usuario.pws" name="pws" required minlength="7" #p="ngModel"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="p.invalid && p.dirty">Senha muito curta!</ion-text>
+
+    <ion-item>
+      <ion-label position="floating">Confirmar Senha</ion-label>
+      <ion-input type="password" (ngModel)="conf" name="conf" required #c="ngModel"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="(p.value != c.value) && c.dirty">Senhas diferentes!</ion-text>
+
+    <ion-item lines="none">
+      <ion-button type="submit" [disabled]="fc.invalid || (p.value != c.value)">Salvar</ion-button>
+      <ion-button type="reset" color="danger" [routerLink]="['/']">Cancelar</ion-button>
+    </ion-item>
+  </form>
+
+ 
+</ion-content>

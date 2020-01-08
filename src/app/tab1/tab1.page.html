@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Collection
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <ion-item lines="none">
+    <img [src]="usuario.foto" alt="">
+  </ion-item>
+
+  <ion-list lines="none">
+    <ion-item>
+      <ion-label>Nome: {{usuario.nome}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>E-mail: {{usuario.email}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Opções: {{usuario.opcoes}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Quant: {{usuario.quat}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>valor: {{usuario.valor}}</ion-label>
+    </ion-item>
+  
+
+    <ion-item>
+      <ion-label>Senha: {{usuario.pws}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
