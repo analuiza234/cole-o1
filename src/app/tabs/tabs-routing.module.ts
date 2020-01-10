@@ -8,12 +8,12 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'addUsuario',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+              import('../pages/add-usuario/add-usuario.module').then(m => m.AddUsuarioPageModule)
           }
         ]
       },
@@ -61,6 +61,16 @@ const routes: Routes = [
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
+      }
+    ]
+  },
+  {
+    path: 'perfilUsuario/:id',
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('../pages/perfil-usuario/perfil-usuario.module').then(m => m.PerfilUsuarioPageModule)
       }
     ]
   },
