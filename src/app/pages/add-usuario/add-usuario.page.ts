@@ -4,7 +4,6 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Router, ActivatedRoute } from '@angular/router';
 
-//import { Camera } from '@ionic-native/camera/ngx';
 
 @Component({
   selector: 'app-add-usuario',
