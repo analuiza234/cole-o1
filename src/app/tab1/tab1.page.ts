@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { UsuarioService } from '../services/usuario.service';
 import { Usuario } from '../model/usuario';
 
@@ -14,20 +13,9 @@ export class Tab1Page {
   protected id: string = null;
 
 constructor(
-protected activatedRoute:ActivatedRoute,
-protected usuarioService: UsuarioService,)
+protected usuarioService: UsuarioService)
 {}
 
-ngOnInit() {
-  this.id = this.activatedRoute.snapshot.paramMap.get("id");
-  if (this.id) {
-    this.usuarioService.get(this.id).subscribe(
-      res => {
-        this.usuario = res
-      },
-      erro => this.id = null
-    )
-  }
-}
+ngOnInit() {}
 
 }

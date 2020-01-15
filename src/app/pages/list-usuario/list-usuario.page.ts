@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { Firebase } from '@ionic-native/firebase/ngx';
 
 @Component({
   selector: 'app-list-usuario',
@@ -15,7 +16,8 @@ export class ListUsuarioPage implements OnInit {
   constructor(
     protected usuarioService: UsuarioService,
     protected router: Router,
-    protected alertController: AlertController
+    protected alertController: AlertController,
+    private firebase: Firebase
   ) { }
 
   ngOnInit() {

@@ -65,6 +65,7 @@ export class AddUsuarioPage implements OnInit {
         )
       }
     }
+    
   }
 
   tirarFoto() {
