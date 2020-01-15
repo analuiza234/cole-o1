@@ -18,6 +18,16 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'tab1',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+          }
+        ]
+      },
+      {
         path: 'tab2',
         children: [
           {
@@ -65,7 +75,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'perfilUsuario/:id',
+    path: 'perfilUsuario/',
     children: [
       {
         path: '',

@@ -8,7 +8,8 @@ const routes: Routes = [
   },
   { path: 'add-usuario', loadChildren: './pages/add-usuario/add-usuario.module#AddUsuarioPageModule' },
   { path: 'list-usuario', loadChildren: './pages/list-usuario/list-usuario.module#ListUsuarioPageModule' },
-  { path: 'perfil-usuario', loadChildren: './pages/perfil-usuario/perfil-usuario.module#PerfilUsuarioPageModule' }
+  { path: 'perfil-usuario', loadChildren: './pages/perfil-usuario/perfil-usuario.module#PerfilUsuarioPageModule' },
+  { path: 'tab1', loadChildren: './tab1/tab1.module#Tab1PageModule' }
 ];
 @NgModule({
   imports: [
