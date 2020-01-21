@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { UsuarioService } from '../services/usuario.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Usuario } from '../model/usuario';
-import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { Firebase } from '@ionic-native/firebase/ngx';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -22,7 +22,7 @@ export class Tab2Page {
   
   constructor(
     protected usuarioService: UsuarioService,
-    private camera: Camera,
+  
     protected router: Router,
     protected activedRoute: ActivatedRoute,
     protected alertController: AlertController
@@ -32,10 +32,6 @@ export class Tab2Page {
   }
   
   onsubmit(form) {
-    if (!this.preview) {
-      this.presentAlert("Ops!", "Tire sua foto!")
-    } else {
-      this.usuario.foto = this.preview;
       if (this.id) {
         this.usuarioService.update(this.usuario, this.id).then(
           res => {
@@ -63,7 +59,7 @@ export class Tab2Page {
           }
         )
       }
-    }
+  
   }
   async presentAlert(titulo: string, texto: string) {
     const alert = await this.alertController.create({
@@ -76,23 +72,6 @@ export class Tab2Page {
     await alert.present();
   }
 
-  tirarFoto() {
-  
-    const options: CameraOptions = {
-      quality: 100,
-      destinationType: this.camera.DestinationType.FILE_URI,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
-    }
-    
-    this.camera.getPicture(options).then((imageData) => {
-     // imageData is either a base64 encoded string or a file URI
-     // If it's base64 (DATA_URL):
-     let base64Image = 'data:image/jpeg;base64,' + imageData;
-    }, (err) => {
-     // Handle error
-    });
-  }
   
 }
   

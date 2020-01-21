@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/model/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+
 import { Router, ActivatedRoute } from '@angular/router';
 
 
@@ -24,7 +24,7 @@ export class AddUsuarioPage implements OnInit {
 
   constructor(
     protected usuarioService: UsuarioService,
-    private camera: Camera,
+  
     protected router: Router,
     protected activedRoute: ActivatedRoute,
   ) { }
@@ -33,10 +33,6 @@ export class AddUsuarioPage implements OnInit {
   }
   
   onsubmit(form) {
-    if (!this.preview) {
-      this.presentAlert("Ops!", "Tire sua foto!")
-    } else {
-      this.usuarios.foto = this.preview;
       if (this.id) {
         this.usuarioService.update(this.usuario, this.id).then(
           res => {
@@ -66,23 +62,6 @@ export class AddUsuarioPage implements OnInit {
       }
     }
     
-  }
 
-  tirarFoto() {
-    const options: CameraOptions = {
-      quality: 50,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
-    }
-    this.camera.getPicture(options).then((imageData) => {
-      // imageData is either a base64 encoded string or a file URI
-      // If it's base64 (DATA_URL):
-      let base64Image = 'data:image/jpeg;base64,' + imageData;
-      this.img = base64Image;
-    }, (err) => {
-      // Handle error
-    });
-  }
-  
+
 }

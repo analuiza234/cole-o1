@@ -8,9 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfil-usuario.page.scss'],
 })
 export class PerfilUsuarioPage implements OnInit {
-  ngOnInit(): void {
-    throw new Error("Method not implemented.");
-  }
+  
   protected usuario: Usuario = new Usuario;
   protected id: string = null;
 
@@ -18,6 +16,8 @@ export class PerfilUsuarioPage implements OnInit {
  protected usuarioService: UsuarioService
   ) { }
 
- 
+ ngOnInit(){
 
+  }
+  
 }

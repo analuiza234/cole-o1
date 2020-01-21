@@ -8,12 +8,16 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+
+
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+
+//Firebase ----------------------------
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule} from '@angular/fire/auth';
-import { Camera } from '@ionic-native/camera/ngx';
-import { environment } from '../environments/environment';
-import { AngularFireModule } from '@angular/fire';
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -26,7 +30,7 @@ import { AngularFireModule } from '@angular/fire';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    Camera,
+   
   ],
   bootstrap: [AppComponent]
 })

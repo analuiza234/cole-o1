@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UsuarioService } from '../services/usuario.service';
-import { Camera } from '@ionic-native/camera/ngx';
+
 import { AlertController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -19,7 +19,7 @@ protected quantUsuario:number = 0;
     protected alertController: AlertController,
     protected router: Router,
     protected activedRoute: ActivatedRoute,
-    private camera: Camera
+    
    
   ) {
     //Quantidade de usuario

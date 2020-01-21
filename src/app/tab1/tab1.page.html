@@ -1,9 +1,23 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>tab1</ion-title>
+    <ion-title slot="start">
+      Inicio
+    </ion-title>
+    <ion-title slot="end">
+      <ion-icon name="person" routerLink="/login"></ion-icon>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content *ngIf="usuarios">
+    <ion-card *ngFor="let usuario of usuarios" [routerLink]="['/tabs/perfilEntrega/',entrega.key]">
+      <!-- <img src="/assets/shapes.svg" alt="" /> -->
+      <ion-card-header>
+        <ion-card-subtitle>{{usuario.nome}}</ion-card-subtitle>
+        <ion-card-title>{{usuario.email}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{usuario.opcao}}.</p>
+      </ion-card-content>
+    </ion-card>
 </ion-content>

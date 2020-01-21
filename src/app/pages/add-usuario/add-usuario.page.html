@@ -5,8 +5,8 @@
 </ion-header>
 <ion-content>
   <ion-item lines="none">
-    <img src="assets/perfil.png" (click)="tirarFoto()" *ngIf="!preview">
-    <img [src]="preview" (click)="tirarFoto()" *ngIf="preview">
+    <img src="assets/perfil.png" *ngIf="!preview">
+    <img [src]="preview"  *ngIf="preview">
   </ion-item>
 
   <form #fc="ngForm" (ngSubmit)="onsubmit(fc)">

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { AngularFireAuth } from '@angular/fire/auth'
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Usuario } from '../model/usuario';
-import { map } from 'rxjs/operators'
+
 
 
 import { AngularFireModule } from '@angular/fire';
@@ -34,10 +34,7 @@ export class UsuarioService {
   getAll() {
     return this.fire.list<Usuario>("usuarios").snapshotChanges()
       .pipe(
-        map(
-          dados =>
-            dados.map(d => ({ key: d.payload.key, ...d.payload.val() }))
-        )
+     
       );
   }
 
