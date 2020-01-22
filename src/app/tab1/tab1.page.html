@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content *ngIf="usuarios">
-    <ion-card *ngFor="let usuario of usuarios" [routerLink]="['/tabs/perfilEntrega/',entrega.key]">
+    <ion-card *ngFor="let usuario of usuarios" [routerLink]="['/tabs/perfilUsuario/',usuario.key]">
       <!-- <img src="/assets/shapes.svg" alt="" /> -->
       <ion-card-header>
         <ion-card-subtitle>{{usuario.nome}}</ion-card-subtitle>
