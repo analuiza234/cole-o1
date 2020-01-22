@@ -6,16 +6,16 @@
 
   export const environment = {
     production: true,
-    firebase :{
-      apiKey: "AIzaSyAwkhl6pJ7OCjKkC4LWwcqPws4ELtb7Wz0",
-      authDomain: "colecao-a5420.firebaseapp.com",
-      databaseURL: "https://colecao-a5420.firebaseio.com",
-      projectId: "colecao-a5420",
-      storageBucket: "colecao-a5420.appspot.com",
-      messagingSenderId: "980260852064",
-      appId: "1:980260852064:web:97594fbf258b6caaab4e05",
-      measurementId: "G-CXFJ38M94C"
-  }
+     firebaseConfig : {
+      apiKey: "AIzaSyDuCg-Hu4r9NoCXTUzRfDz12g4tSviDMKc",
+      authDomain: "collections1-3209b.firebaseapp.com",
+      databaseURL: "https://collections1-3209b.firebaseio.com",
+      projectId: "collections1-3209b",
+      storageBucket: "collections1-3209b.appspot.com",
+      messagingSenderId: "739737717926",
+      appId: "1:739737717926:web:a98933fbba7725b7003867",
+      measurementId: "G-B07S2L6207"
+    }
 };
 
 /*

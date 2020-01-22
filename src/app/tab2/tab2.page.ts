@@ -4,6 +4,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Usuario } from '../model/usuario';
 import { Firebase } from '@ionic-native/firebase/ngx';
 import { AlertController } from '@ionic/angular';
+import { FirebaseAuth } from '@angular/fire';
+import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
+import { FirebaseAnalytics } from '@ionic-native/firebase-analytics/ngx'
 
 @Component({
   selector: 'app-tab2',
@@ -22,13 +25,14 @@ export class Tab2Page {
   
   constructor(
     protected usuarioService: UsuarioService,
-  
+
     protected router: Router,
     protected activedRoute: ActivatedRoute,
     protected alertController: AlertController
   ) { }
 
   ngOnInit() {
+    
   }
   
   onsubmit(form) {
