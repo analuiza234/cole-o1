@@ -18,12 +18,32 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'addUsuario/:id',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/add-usuario/add-usuario.module').then(m => m.AddUsuarioPageModule)
+          }
+        ]
+      },
+      {
         path: 'tab1',
         children: [
           {
             path: '',
             loadChildren: () =>
               import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+          }
+        ]
+      },
+      {
+        path: 'perfilUsuario/',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/perfil-usuario/perfil-usuario.module').then(m => m.PerfilUsuarioPageModule)
           }
         ]
       },
@@ -37,16 +57,7 @@ const routes: Routes = [
           }
         ]
       },
-      {
-        path: 'addUsuario/:id',
-        children: [
-          {
-            path: '',
-            loadChildren: () =>
-              import('../pages/add-usuario/add-usuario.module').then(m => m.AddUsuarioPageModule)
-          }
-        ]
-      },
+     
       {
         path: 'listUsuario',
         children: [
@@ -74,16 +85,7 @@ const routes: Routes = [
       }
     ]
   },
-  {
-    path: 'perfilUsuario/',
-    children: [
-      {
-        path: '',
-        loadChildren: () =>
-          import('../pages/perfil-usuario/perfil-usuario.module').then(m => m.PerfilUsuarioPageModule)
-      }
-    ]
-  },
+ 
   {
     path: '',
     redirectTo: '/tabs/tab1',

@@ -9,13 +9,14 @@ import { Usuario } from '../model/usuario';
 })
 export class Tab1Page {
 
+  usuarios: any;
   protected usuario: Usuario = new Usuario;
   protected id: string = null;
 
-constructor(
-protected usuarioService: UsuarioService)
-{}
-
-ngOnInit() {}
+  constructor(
+    protected usuarioService: UsuarioService,
+  ) {
+  }
+  
 
 }

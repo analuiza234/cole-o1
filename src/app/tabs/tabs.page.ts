@@ -12,6 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class TabsPage {
 protected quantUsuario:number = 0;
+protected route: any;
 
 
   constructor(
