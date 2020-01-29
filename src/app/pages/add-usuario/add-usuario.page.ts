@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/model/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
-
+import { AlertController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 
 

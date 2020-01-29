@@ -1,4 +1,6 @@
 export class Usuario {
+  lng: any;
+  lat: any;
     id: string;
     nome: string;
     email: string;

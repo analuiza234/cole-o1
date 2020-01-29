@@ -9,17 +9,27 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="usuarios">
-    <ion-card *ngFor="let usuario of usuarios" [routerLink]="['/tabs/perfilUsuario/',usuario.key]">
-      <!-- <img src="/assets/shapes.svg" alt="" /> -->
-      <ion-card-header>
-        <ion-card-subtitle>{{usuario.nome}}</ion-card-subtitle>
-        <ion-card-title>{{usuario.email}}</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>{{usuario.opcao}}.</p>
-      </ion-card-content>
-    </ion-card>
+<ion-content>
+  <ion-item lines="none">
+    <img src="assets/usuario.png"  *ngIf="!preview">
+    <img [src]="preview"  *ngIf="preview">
+  </ion-item>
+<ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Collections</ion-card-subtitle>
+      <ion-card-title>O que é coleção</ion-card-title>
+    
+    </ion-card-header>
   
-
+    <ion-card-content>  
+  Uma coleção é o resultado do ato de colecionar, da reunião, 
+  do ajuntamento ou da compilação de objetos de natureza semelhante. 
+  Existem vários tipos de coleções e colecionadores: de selos, moedas, carros, 
+  obras de arte e até mesmo as de objetos variados. 
+  Se buscarmos informações sobre a história da formação das primeiras coleções, 
+  veremos que desde  a Antiguidade o homem reúne objetos com motivações diversas: prazer, 
+  vaidade, apego material, geração de conhecimento, afirmação de valores.
+    </ion-card-content>
+  </ion-card> 
+  
 </ion-content>

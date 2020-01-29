@@ -20,7 +20,7 @@ export class LoginPage implements OnInit {
     public afAuth: AngularFireAuth,
     protected router: Router,
     protected msg: MensagemService,
-  
+
     private platform: Platform
   ) { }
 

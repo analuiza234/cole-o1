@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
-
+import { PerfilUsuarioPage } from './../pages/perfil-usuario/perfil-usuario.page';
 const routes: Routes = [
   {
     path: 'tabs',
@@ -38,7 +38,7 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'perfilUsuario/',
+        path: 'perfilUsuario',
         children: [
           {
             path: '',

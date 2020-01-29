@@ -59,8 +59,8 @@
     <ion-text color="danger" *ngIf="(p.value != c.value) && c.dirty">Senhas diferentes!</ion-text>
 
     <ion-item lines="none">
-      <ion-button type="submit" [disabled]="fc.invalid || (p.value != c.value)">Salvar</ion-button>
-      <ion-button type="reset" color="danger" [routerLink]="['/']">Cancelar</ion-button>
+      <ion-button type="submit" color="tertiary" [disabled]="fc.invalid || (p.value != c.value)">Salvar</ion-button>
+      <ion-button type="reset" color="secondary" [routerLink]="['/']">Cancelar</ion-button>
     </ion-item>
   </form>
 <!-- The core Firebase JS SDK is always required and must be listed first -->

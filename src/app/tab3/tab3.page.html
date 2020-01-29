@@ -1,37 +1,48 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      informações
+      Lista de Usuários
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="danger" routerLink="/tabs/addUsuario">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
+  <ion-list *ngIf="usuarios | async as users">
+    <ion-item-sliding *ngFor="let u of users">
+      <ion-item-options side="start">
+        <ion-item-option color="" (click)="editar(u.key)">
+          Atualizar
+        </ion-item-option>
+      </ion-item-options>
 
-    <ion-item lines="none">
-        <img src="assets/usuario.png"  *ngIf="!preview">
-        <img [src]="preview"  *ngIf="preview">
+      <ion-item [routerLink]="['/tabs/listUsuario/',u.key]">
+        <ion-avatar slot="start">
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+        <ion-label>
+          {{u.nome}} - {{u.email}}
+        </ion-label>
+        <ion-note>{{u.key}}</ion-note>
       </ion-item>
-    <ion-card>
-        <ion-card-header>
-          <ion-card-subtitle>Collections</ion-card-subtitle>
-          <ion-card-title>O que é coleção</ion-card-title>
-        
-        </ion-card-header>
-      
-        <ion-card-content>  
-      Uma coleção é o resultado do ato de colecionar, da reunião, 
-      do ajuntamento ou da compilação de objetos de natureza semelhante. 
-      Existem vários tipos de coleções e colecionadores: de selos, moedas, carros, 
-      obras de arte e até mesmo as de objetos variados. 
-      Se buscarmos informações sobre a história da formação das primeiras coleções, 
-      veremos que desde  a Antiguidade o homem reúne objetos com motivações diversas: prazer, 
-      vaidade, apego material, geração de conhecimento, afirmação de valores.
-        </ion-card-content>
-      </ion-card>  
-      
-      
-      
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="remover(u.key)">
+          Delete
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+  
+
 </ion-content>
