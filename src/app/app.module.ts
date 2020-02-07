@@ -18,8 +18,10 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule} from '@angular/fire/auth';
+import { SearchPipe } from './search.pipe';
+import { SortPipe } from './sort.pipe';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SearchPipe, SortPipe],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),

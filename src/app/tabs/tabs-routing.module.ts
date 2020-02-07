@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
-import { PerfilUsuarioPage } from './../pages/perfil-usuario/perfil-usuario.page';
+
 const routes: Routes = [
   {
     path: 'tabs',
@@ -37,16 +37,7 @@ const routes: Routes = [
           }
         ]
       },
-      {
-        path: 'perfilUsuario',
-        children: [
-          {
-            path: '',
-            loadChildren: () =>
-              import('../pages/perfil-usuario/perfil-usuario.module').then(m => m.PerfilUsuarioPageModule)
-          }
-        ]
-      },
+      
       {
         path: 'tab2',
         children: [
@@ -58,16 +49,7 @@ const routes: Routes = [
         ]
       },
      
-      {
-        path: 'listUsuario',
-        children: [
-          {
-            path: '',
-            loadChildren: () =>
-            import('../pages/list-usuario/list-usuario.module').then(m => m.ListUsuarioPageModule)
-          }
-        ]
-      },
+      
       {
         path: 'tab3',
         children: [
@@ -78,6 +60,7 @@ const routes: Routes = [
           }
         ]
       },
+
       {
         path: '',
         redirectTo: '/tabs/tab1',
@@ -85,6 +68,7 @@ const routes: Routes = [
       }
     ]
   },
+
  
   {
     path: '',
